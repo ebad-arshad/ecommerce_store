@@ -1,0 +1,13 @@
+.nav_resp_2::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 575px) {
+    .nav_resp_1 {
+        display: none !important;
+    }
+
+    .nav_resp_2 {
+        width: 100% !important;
+    }
+}

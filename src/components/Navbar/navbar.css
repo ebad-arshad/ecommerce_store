@@ -1,0 +1,81 @@
+@font-face {
+    font-family: Space;
+    src: url('../../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf');
+}
+
+nav * {
+    font-family: Space !important;
+    padding: auto 64px;
+}
+
+nav {
+    background: #f0f2ee;
+    padding: 0 30px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.nav_scrolled {
+    box-shadow: 0 4px 10px rgba(3, 4, 28, .1);
+}
+
+.nav_search {
+    box-shadow: 0 1px 2px rgba(3, 4, 28, .1);
+}
+
+.pages_list {
+    box-shadow: 0 20px 30px rgba(3, 4, 28, .1);
+}
+
+
+
+@media screen and (max-width:575px) {
+    nav {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .nav_cart_icon {
+        display: none !important;
+    }
+
+    .search_icon {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .nav_list {
+        display: none !important;
+    }
+
+    .nav_ham {
+        display: flex !important;
+    }
+}
+
+@media screen and (max-width:1399px) {
+    nav {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .nav_search {
+        display: none !important;
+    }
+
+    .search_icon {
+        margin-left: 0;
+    }
+
+    .nav_cart_icon {
+        margin-left: 20px !important;
+        padding: 0 !important;
+    }
+
+    .nav_first_box {
+        flex: 1.4%;
+    }
+
+}

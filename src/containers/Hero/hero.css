@@ -1,0 +1,40 @@
+.hero {
+    min-height: 100vh;
+    background: #f0f2ee;
+}
+
+@media screen and (max-width:1200px) {
+    .hero_heading {
+        font-size: 60px !important;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .hero {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    .circle_span {
+        top: -10% !important;
+    }
+
+    .hero_image_box {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .hero_heading {
+        font-size: 40px !important;
+        line-height: 45px !important;
+    }
+
+    .circle_span {
+        left: 0 !important;
+    }
+
+    .hero_image {
+        width: 250px !important;
+    }
+}

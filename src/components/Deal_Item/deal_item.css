@@ -1,0 +1,35 @@
+.circle_for_side::after,
+.circle_for_side::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    bottom: -13px;
+    right: 50%;
+    z-index: 1;
+    transform: translateX(50%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px solid #eaeaef;
+    border-bottom: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+.circle_for_side::before {
+    top: -13px;
+    rotate: 180deg;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+    .coupon_container {
+        flex-direction: column !important;
+        padding-bottom: 20px;
+    }
+
+    .coupon_code {
+        margin-left: 24px;
+    }
+}

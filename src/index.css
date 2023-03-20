@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('./assets/fonts/Roboto/Roboto-Bold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto-Regular;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+::selection {
+    color: white;
+    background: #03041c;
+}
+
+/* 
+grayish #f0f2ee
+fontgray #525258
+pink #f50963
+*/
