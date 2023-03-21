@@ -43,13 +43,11 @@ const Hero = () => {
                     className='w-fit border mt-6'
                     variants={child_varients}
                 >
-                    <div>
-                        <Button text='Shop Now' border='border-[1px]' color='text-[#03041c]' bg_color='bg-[#f0f2ee]' hover_color='hover:text-[#f0f2ee]' hover_bg_color='hover:bg-[#03041c]' />
-                    </div>
+                    <Button text='Shop Now' border='border-[1px]' color='text-[#03041c]' bg_color='bg-[#f0f2ee]' hover_color='hover:text-[#f0f2ee]' hover_bg_color='hover:bg-[#03041c]' />
                 </motion.div>
             </motion.div>
             <div className='flex-1 flex items-end justify-center'>
-                <div className='border w-fit relative'>
+                <div className='w-fit relative'>
                     <motion.span
                         className='circle_span absolute bottom-[150px] right-[-50px] z-0 bg-white rounded-full w-[450px] h-[450px]'
                         initial={{ opacity: 0 }}

@@ -1,3 +1,4 @@
+import logo from './logo.svg'
 import slider_1 from './slider_image_1.webp'
 import slider_2 from './slider_image_2.webp'
 import slider_3 from './slider_image_3.webp'
@@ -36,8 +37,11 @@ import coupon_1 from './coupon_1.webp'
 import coupon_2 from './coupon_2.webp'
 import coupon_3 from './coupon_3.webp'
 import coupon_4 from './coupon_4.webp'
+import payment_options from './payment_options.webp'
 
 export {
+    logo
+    ,
     slider_1
     , slider_2
     , slider_3
@@ -76,4 +80,5 @@ export {
     , coupon_2
     , coupon_3
     , coupon_4
+    , payment_options
 }

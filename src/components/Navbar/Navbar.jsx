@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Logo from '../../assets/images/logo.svg'
+import { logo } from '../../assets/images/index'
 import './navbar.css'
 import { AnimatePresence, motion } from "framer-motion"
 import Navbar_Responsive from '../../containers/Navbar_Responsive/Navbar_Responsive'
@@ -65,15 +65,15 @@ const Navbar = () => {
                 transition={{ type: 'tween', delay: 1 }}
             >
                 <div className='nav_first_box flex items-center gap-10 flex-1'>
-                    <div className='w-[112px]'><img className='w-full' src={Logo} alt="" /></div>
+                    <div className='w-[112px]'><img className='w-full' src={logo} alt="" /></div>
                     <ul className='nav_list flex gap-10 text-[14px] text-[#525258] font-semibold h-full m-0'>
                         <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>Home</li>
                         <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>About us</li>
                         <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>Shop</li>
                         <motion.li
                             className='cursor-pointer relative'
-                            onHoverStart={() => set_pages_list_toggle(true)}
-                            onHoverEnd={() => set_pages_list_toggle(false)}
+                            onMouseOver={() => set_pages_list_toggle(true)}
+                            onMouseLeave={() => set_pages_list_toggle(false)}
                         ><span className='transition duration-500 hover:text-[#f50963] gap-1 h-full flex items-center'>Pages <IoIosArrowDown /></span>
                             <AnimatePresence>
                                 {pages_list_toggle &&

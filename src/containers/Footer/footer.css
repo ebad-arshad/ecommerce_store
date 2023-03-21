@@ -1,0 +1,11 @@
+@media screen and (max-width:639px) {
+    .footer {
+        padding: auto 50px !important;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .footer_list {
+        padding: 0 !important;
+    }
+}

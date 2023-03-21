@@ -23,6 +23,14 @@
     transform: translateX(-50%);
 }
 
+@media screen and (max-width: 576px) {
+    .coupon_title {
+        flex-direction: column;
+    }
+    .coupon_code  {
+    }
+}
+
 @media screen and (max-width: 768px) {
     .coupon_container {
         flex-direction: column !important;

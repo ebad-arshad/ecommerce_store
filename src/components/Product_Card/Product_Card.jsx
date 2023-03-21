@@ -37,12 +37,12 @@ const Product_Card = ({ img, name, price, discounted_price, on_sale, discount })
         <div className='col-xl-3 col-lg-4 col-sm-6'>
             <div className='flex flex-col relative'>
                 <motion.div
-                    className='relative cursor-pointer overflow-hidden flex justify-center'
-                    onHoverStart={() => set_is_hover(true)}
-                    onHoverEnd={() => set_is_hover(false)}
+                    className='relative cursor-pointer overflow-hidden '
+                    onMouseOver={() => set_is_hover(true)}
+                    onMouseLeave={() => set_is_hover(false)}
                 >
                     <motion.img
-                        className='transition duration-[.5s]' src={img} alt=""
+                        className='transition duration-[.5s] w-full object-cover' src={img} alt=""
                         initial={{ scale: 1 }}
                         animate={{ scale: is_hover ? 1.1 : 1 }}
                     />

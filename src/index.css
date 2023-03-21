@@ -19,8 +19,8 @@
     font-family: Roboto-Regular;
 }
 
-body {
-    overflow-x: hidden;
+#root {
+    overflow-x: hidden !important;
 }
 
 ::selection {
@@ -32,4 +32,5 @@ body {
 grayish #f0f2ee
 fontgray #525258
 pink #f50963
+black #03041c
 */

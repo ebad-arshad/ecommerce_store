@@ -19,7 +19,7 @@ const Popular_Products = () => {
                     <li onClick={() => { set_active_product_btn(2); set_active_product_list(latest_product) }} className={`px-2 transition duration-200 cursor-pointer py-1 ${active_product_btn === 2 ? 'text-[#f50963] border-b-[#f50963] font-bold border-b-2' : 'text-[#525258] hover:font-bold hover:text-[#f50963]'}`}>Latest Product</li>
                 </ul>
             </div>
-            <div className='mb-[200px] row gy-4'>
+            <div className='row gy-4'>
                 {active_product_list.map((product, index) => <Product_Card key={index} img={product.img} name={product.name} price={product.price} discounted_price={product.discounted_price} on_sale={product.on_sale} discount={product.discount} />)}
             </div>
         </div>
