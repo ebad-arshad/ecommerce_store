@@ -2,6 +2,7 @@ import React from 'react'
 import './footer.css'
 import { payment_options, logo } from '../../assets/images/index'
 import Footer_List from '../../components/Footer_List/Footer_List'
+import { FaFacebookF, FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 const Footer = () => {
 
@@ -28,7 +29,11 @@ const Footer = () => {
                         <div className='pr-[70px]'>
                             <div><img src={logo} alt="" /></div>
                             <p className='m-0 my-3 '>The home and elements needed to create beautiful products.</p>
-                            <div></div>
+                            <div className='flex gap-3'>
+                                <span><FaFacebookF className='hover:text-[#f50963] text-[#525258] cursor-pointer transition duration-300' size={17} /></span>
+                                <span><FaLinkedinIn className='hover:text-[#f50963] text-[#525258] cursor-pointer transition duration-300' size={17} /></span>
+                                <span><FaGithub className='hover:text-[#f50963] text-[#525258] cursor-pointer transition duration-300' size={17} /></span>
+                            </div>
                         </div>
                     </div>
 
