@@ -24,7 +24,7 @@ const Navbar_Responsive = ({ set_nav_resp, pages_list }) => {
             <div className='nav_resp_2 overflow-y-scroll py-10 bg-white flex flex-col w-[360px] relative'>
                 <div className='flex items-center px-10'>
                     <div className='flex-1'><img className='cursor-pointer' src={Logo} alt="" /></div>
-                    <div onClick={() => set_nav_resp(false)} className='w-10 h-10 rounded-full bg-white border hover:bg-[#f50963] text-[#525258] cursor-pointer transition duration-[0.5s] hover:text-white hover:border-[#f50963] flex items-center justify-center'><RxCross2 size={18} /></div>
+                    <div onClick={() => set_nav_resp(false)} className='w-10 h-10 rounded-full bg-white border hover:!bg-[#f50963] text-[#525258] cursor-pointer transition duration-[0.5s] hover:!text-white hover:!border-[#f50963] flex items-center justify-center'><RxCross2 size={18} /></div>
                 </div>
                 <Nav_Resp_List pages_list={pages_list} />
                 <Nav_Resp_Footer />

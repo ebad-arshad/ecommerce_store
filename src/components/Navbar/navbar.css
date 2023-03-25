@@ -1,8 +1,3 @@
-@font-face {
-    font-family: Space;
-    src: url('../../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf');
-}
-
 nav * {
     font-family: Space !important;
     padding: auto 64px;

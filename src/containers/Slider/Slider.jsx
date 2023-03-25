@@ -13,7 +13,6 @@ import Slider_Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from 'react';
-import Go_To_Top from '../../components/Go_To_Top/Go_To_Top';
 
 const Slider = () => {
 
@@ -45,7 +44,6 @@ const Slider = () => {
 
     return (
         <>
-            <Go_To_Top />
             <div className='relative flex flex-col my-24 sm:mx-16 px-3'>
                 <Slider_Slick className='w-full flex justify-between items-center cursor-pointer select-none' {...settings}>
                     <SliderCard img={slider_1} />

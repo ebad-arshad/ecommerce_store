@@ -1,0 +1,17 @@
+.my_cart * {
+    font-family: Space;
+}
+
+@media screen and (max-width: 767px) {
+    .my_cart {
+        &>div:nth-child(3) {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .my_cart {
+        padding: 0 32px !important;
+    }
+}

@@ -4,6 +4,8 @@ import './navbar.css'
 import { AnimatePresence, motion } from "framer-motion"
 import Navbar_Responsive from '../../containers/Navbar_Responsive/Navbar_Responsive'
 import { IoIosArrowDown } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const nav_burger_part_1 = {
     rest: { x: 0 },
@@ -17,6 +19,7 @@ const nav_burger_part_3 = {
 
 const Navbar = () => {
 
+    const navigate = useNavigate()
     const [nav_style, set_nav_style] = useState('absolute')
 
     useEffect(() => {
@@ -30,16 +33,16 @@ const Navbar = () => {
     const [pages_list_toggle, set_pages_list_toggle] = useState(false)
 
     const pages_item = [
-        'FAQs',
-        'Privacy & Policy',
-        'Terms & Conditions',
-        'Login',
-        'Register',
-        'Forgot Password',
-        'My Cart',
-        'My Wishlist',
-        'Checkout',
-        'Error 404',
+        { name: 'FAQs', path: '/faqs' },
+        { name: 'Privacy & Policy', path: '/privacy_policy' },
+        { name: 'Terms & Conditions', path: 'terms_conditions' },
+        { name: 'Login', path: '/login' },
+        { name: 'Register', path: '/signup' },
+        { name: 'Forgot Password', path: '/forgot' },
+        { name: 'My Cart', path: '/cart' },
+        { name: 'My Wishlist', path: '/wishlist' },
+        { name: 'Checkout', path: '/checkout' },
+        { name: 'Error 404', path: '/error' },
     ]
     const nav_cart_item = [
         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0001 19V17C17.0001 15.9391 16.5787 14.9217 15.8285 14.1716C15.0784 13.4214 14.061 13 13.0001 13H5.00012C3.93926 13 2.92184 13.4214 2.17169 14.1716C1.42155 14.9217 1.00012 15.9391 1.00012 17V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path><path d="M9.00012 9C11.2093 9 13.0001 7.20914 13.0001 5C13.0001 2.79086 11.2093 1 9.00012 1C6.79098 1 5.00012 2.79086 5.00012 5C5.00012 7.20914 6.79098 9 9.00012 9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg>,
@@ -60,21 +63,18 @@ const Navbar = () => {
             </AnimatePresence>
             <motion.nav
                 className={`flex w-full border ${nav_style} top-0 left-0 z-20 h-[76px]`}
-                initial={{ y: '-20vh' }}
-                animate={{ y: 0 }}
-                transition={{ type: 'tween', delay: 1 }}
             >
                 <div className='nav_first_box flex items-center gap-10 flex-1'>
-                    <div className='w-[112px]'><img className='w-full' src={logo} alt="" /></div>
-                    <ul className='nav_list flex gap-10 text-[14px] text-[#525258] font-semibold h-full m-0'>
-                        <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>Home</li>
-                        <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>About us</li>
-                        <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>Shop</li>
+                    <div onClick={() => navigate('/home')} className='w-[112px] cursor-pointer'><img className='w-full' src={logo} alt="" /></div>
+                    <ul className='nav_list flex gap-10 text-[14px] font-semibold h-full m-0'>
+                        <li className='cursor-pointer h-full flex items-center'><Link className='transition duration-300 no-underline text-[#525258] hover:!text-[#f50963]' to='/home'>Home</Link></li>
+                        <li className='cursor-pointer h-full flex items-center'><Link className='transition duration-300 no-underline text-[#525258] hover:!text-[#f50963]' to='/about_us'>About us</Link></li>
+                        <li className='cursor-pointer h-full flex items-center'><Link className='transition duration-300 no-underline text-[#525258] hover:!text-[#f50963]' to='/shop'>Shop</Link></li>
                         <motion.li
                             className='cursor-pointer relative'
                             onMouseOver={() => set_pages_list_toggle(true)}
                             onMouseLeave={() => set_pages_list_toggle(false)}
-                        ><span className='transition duration-500 hover:text-[#f50963] gap-1 h-full flex items-center'>Pages <IoIosArrowDown /></span>
+                        ><span className='transition duration-300 hover:text-[#f50963] gap-1 h-full flex items-center text-[#525258]'>Pages <IoIosArrowDown /></span>
                             <AnimatePresence>
                                 {pages_list_toggle &&
                                     <motion.ul
@@ -85,23 +85,23 @@ const Navbar = () => {
                                         transition={{ type: 'tween', duration: .1, when: 'beforeChildren' }}
                                     >
                                         {
-                                            pages_item.map((v, i) => <motion.li key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='transition duration-500 hover:text-[#f50963] px-6'>{v}</motion.li>)
+                                            pages_item.map((v, i) => <motion.li key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className=' px-6'><Link className='transition duration-300 no-underline text-[#525258] hover:!text-[#f50963]' to={v.path}>{v.name}</Link></motion.li>)
                                         }
                                     </motion.ul>
                                 }
                             </AnimatePresence>
                         </motion.li>
-                        <li className='cursor-pointer transition duration-500 hover:text-[#f50963] h-full flex items-center'>Contact us</li>
+                        <li className='cursor-pointer h-full flex items-center'><Link className='transition duration-300 no-underline text-[#525258] hover:!text-[#f50963]' to='/contact_us'>Contact us</Link></li>
                     </ul>
                 </div>
                 <div className='flex-[0.9] flex justify-between items-center py-4'>
                     <div className='flex flex-1 justify-end items-center text-[#525258] h-full'>
-                        <input className='nav_search rounded-3xl text-md pl-6 outline-none h-12 w-[70%]' type="text" placeholder='Search for products...' />
+                        <input className='nav_search rounded-3xl text-md pl-6 outline-none h-12 w-[70%] border-[1px] transition duration-300 border-white focus:!border-black' type="text" placeholder='Search for products...' />
                         <svg className='search_icon ml-[-35px] cursor-pointer' width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.12492 15.2498C12.0599 15.2498 15.2498 12.0599 15.2498 8.12492C15.2498 4.18994 12.0599 1 8.12492 1C4.18994 1 1 4.18994 1 8.12492C1 12.0599 4.18994 15.2498 8.12492 15.2498Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M15.9999 16L14.4999 14.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                     </div>
                     <div className='nav_cart_icon flex items-center gap-3 text-[#525258] flex-[0.2] px-4 ml-10'>
                         {nav_cart_item.map((cartItem, i) => {
-                            return <div key={i} className='relative cursor-pointer transition duration-500 hover:text-black'>{cartItem}</div>
+                            return <div key={i} className='relative cursor-pointer transition duration-300 hover:text-black'>{cartItem}</div>
                         })}
                     </div>
                     <motion.div

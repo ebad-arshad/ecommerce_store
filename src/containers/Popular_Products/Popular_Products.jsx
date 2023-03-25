@@ -20,7 +20,7 @@ const Popular_Products = () => {
                 </ul>
             </div>
             <div className='row gy-4'>
-                {active_product_list.map((product, index) => <Product_Card key={index} img={product.img} name={product.name} price={product.price} discounted_price={product.discounted_price} on_sale={product.on_sale} discount={product.discount} />)}
+                {active_product_list.map((product) => <Product_Card key={product.id} {...product} />)}
             </div>
         </div>
     )

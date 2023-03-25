@@ -1,0 +1,33 @@
+.login_container {
+    &>div:nth-child(1) {
+
+        h3 {
+            font-family: Space;
+        }
+
+        box-shadow: 0 30px 60px rgba(3, 4, 28, .1)
+    }
+}
+
+@media screen and (max-width:768px) {
+    .login_container {
+        &>div {
+            width: 500px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+}
+
+@media screen and (max-width:575px) {
+    .login_container {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &>div {
+            width: 100%;
+        }
+    }
+
+}

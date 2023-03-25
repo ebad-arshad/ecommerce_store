@@ -1,0 +1,15 @@
+.errorPage * {
+    font-family: 'Space';
+}
+
+@media screen and (max-width:575px) {
+    .error_heading {
+        font-size: 30px !important;
+    }
+}
+    @media screen and (max-width:639px) {
+    .errorPage {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+    }
+}

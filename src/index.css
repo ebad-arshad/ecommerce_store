@@ -12,6 +12,11 @@
     src: url('./assets/fonts/Roboto/Roboto-Bold.ttf');
 }
 
+@font-face {
+    font-family: Space;
+    src: url('./assets/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,4 +38,5 @@ grayish #f0f2ee
 fontgray #525258
 pink #f50963
 black #03041c
+gray text #525258
 */
