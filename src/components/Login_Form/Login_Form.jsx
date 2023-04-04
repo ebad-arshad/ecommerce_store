@@ -7,8 +7,11 @@ import Button from '../Button/Button'
 import { RxCross2 } from 'react-icons/rx'
 import Alert_Modal from '../Alert_Modal/Alert_Modal'
 import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
 
-const Login_Form = () => {
+const Login_Form = ({ admin }) => {
+
 
     const [is_active, set_is_active] = useState({ email: false, password: false })
     const [show_modal, set_show_modal] = useState(false)
@@ -16,8 +19,18 @@ const Login_Form = () => {
     const navigate = useNavigate()
 
     const submit = (e) => {
-        console.log(e);
-        set_show_modal(true)
+        if (e.email !== 'ebad-store@gmail.com') return set_show_modal(true)
+
+
+        signInWithEmailAndPassword(auth, e.email, e.password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                navigate('/admin/dashboard')
+            })
+            .catch((error) => {
+                console.log(error.message);
+                set_show_modal(true)
+            });
     }
 
     return (

@@ -1,8 +1,8 @@
 import Login_Container from '../../containers/Login_Container/Login_Container'
 
-const Login = () => (
+const Login = ({admin}) => (
   <>
-    <Login_Container />
+    <Login_Container admin={admin}/>
   </>
 )
 

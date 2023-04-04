@@ -10,6 +10,7 @@ import Go_To_Top from "../components/Go_To_Top/Go_To_Top"
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../containers/Footer/Footer"
 import Cart from "../pages/Cart/Cart"
+import Dashboard from "../pages/Dashboard/Dashboard"
 
 const Router = () => {
 
@@ -21,6 +22,18 @@ const Router = () => {
                 <Navbar />
                 <Go_To_Top />
                 <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/admin/login" element={<Login admin={true} />} />
+                    <Route path="/admin/dashboard" element={<Dashboard />} />
+                    <Route path="/forgot" element={<Forgot />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/*" element={<ErrorPage />} />
+                </Routes>
+                {/* <Routes>
                     <Route path="/" element={user ? <Navigate to='/home' /> : <Navigate to='login' />} />
                     <Route path="/home" element={!user ? <Navigate to={`/login`} /> : <Home />} />
                     <Route path="/login" element={user ? <Navigate to={`/home`} /> : <Login />} />
@@ -29,7 +42,7 @@ const Router = () => {
                     <Route path="/wishlist" element={!user ? <Navigate to={`/login`} /> : <Wishlist />} />
                     <Route path="/cart" element={!user ? <Navigate to={`/login`} /> : <Cart />} />
                     <Route path="/*" element={<ErrorPage />} />
-                </Routes>
+                </Routes> */}
                 <Footer />
             </BrowserRouter>
         </>
