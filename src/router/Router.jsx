@@ -18,9 +18,9 @@ const Router = () => {
 
     return (
         <>
-            {/* <Navbar />
-            <Go_To_Top /> */}
             <BrowserRouter>
+                <Navbar />
+                <Go_To_Top />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/home" element={<Home />} />
@@ -43,7 +43,7 @@ const Router = () => {
                     <Route path="/cart" element={!user ? <Navigate to={`/login`} /> : <Cart />} />
                     <Route path="/*" element={<ErrorPage />} />
                 </Routes> */}
-                {/* <Footer /> */}
+                <Footer />
             </BrowserRouter>
         </>
     )
